@@ -4,7 +4,7 @@ import re
 from dataclasses import dataclass
 from datetime import datetime
 from enum import Enum, auto
-from sources.helpers import compute_job_id
+from .helpers import compute_job_id
 from typing import Optional
 
 class Remote(Enum):
