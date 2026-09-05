@@ -57,6 +57,7 @@ def fetch_brightermonday_full_listings(summaries: list):
         text = soup.find("script", type="application/ld+json").get_text()
         text_to_dict = json.loads(text)
         text_to_resolve = text_to_dict["@graph"]
+        # Due to the many json ld nodes we resolve this by obtaining the important @id node
         resolved_text = resolve_jsonld_graph(text_to_resolve)
         job_posting = find_node_by_type(resolved_text, "JobPosting")
 
