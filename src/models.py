@@ -4,6 +4,7 @@ import re
 from dataclasses import dataclass
 from datetime import datetime
 from enum import Enum, auto
+from sources.helpers import compute_job_id
 from typing import Optional
 
 class Remote(Enum):
@@ -25,7 +26,7 @@ class Job:
 
     @classmethod
     def from_dict(cls, data: dict, source: str):
-        hash_id = hashlib.sha256(f"{data['url']}{source}".encode()).hexdigest()
+        hash_id = compute_job_id(data["url"], source)
         format_date = datetime.fromisoformat(data['date'])
         remote_status = _parse_remote_status(data.get('remote'))
         
