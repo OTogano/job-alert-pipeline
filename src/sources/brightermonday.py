@@ -2,7 +2,7 @@ import json
 import time
 import requests
 from bs4 import BeautifulSoup
-from .helpers import find_node_by_type, resolve_jsonld_graph
+from ..helpers import find_node_by_type, resolve_jsonld_graph
 
 
 def fetch_brightermonday_listings_summaries(category:str):
@@ -65,12 +65,3 @@ def fetch_brightermonday_full_listings(summaries: list):
 
         time.sleep(1)
     return listings
-
-test_summaries = [
-    {'title': 'Senior QA Automation Engineer', 'url': 'https://www.brightermonday.co.ke/listings/qa-developer-5p64x6'},
-    {'title': 'FreshDesk Specialist', 'url': 'https://www.brightermonday.co.ke/listings/freshdesk-specialist-x8d448'}
-]
-
-# output = fetch_brightermonday_full_listings(test_summaries)
-# import json
-# print(json.dumps(output, indent=2))
