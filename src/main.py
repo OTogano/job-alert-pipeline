@@ -19,6 +19,11 @@ def main():
     all_jobs = []
 
     # Brighter Monday
+    """
+    Brighter Monday's website is structured such that the full job listing information is
+    accessed from the jobs title card. Rather than scrapping all the Job listings by navigating
+    each card, which is an expensive fetch, only scrape the ones that are new/not saved to store.db. 
+    """
     for category in config["job-categories"]:
         summaries = fetch_brightermonday_listings_summaries(category)
 

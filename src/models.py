@@ -24,6 +24,10 @@ class Job:
     posted_date: datetime
     id: str 
 
+    """
+    Job id of a job posting is obtained by hashing the (url + source) of the job listing.
+    This is done to allow stability across repeated fetches of the same listing.
+    """
     @classmethod
     def from_dict(cls, data: dict, source: str):
         hash_id = compute_job_id(data["url"], source)
