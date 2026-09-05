@@ -1,5 +1,5 @@
 import requests
-from helpers import unix_timestamp_to_iso
+from .helpers import unix_timestamp_to_iso
 
 def fetch_arbeitnow_jobs():
     response = requests.get("https://arbeitnow.com/api/job-board-api")
@@ -18,5 +18,4 @@ def fetch_arbeitnow_jobs():
             "tags":job["tags"],
             "date":unix_timestamp_to_iso(job["created_at"])
         })
-
     return output
