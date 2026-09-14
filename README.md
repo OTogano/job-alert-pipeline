@@ -83,4 +83,4 @@ The pipeline runs automatically via GitHub Actions (`.github/workflows/run.yml`)
 
 ## Tech stack
 
-Python, `requests`, `BeautifulSoup4`, SQLite, PyYAML, python-dotenv, GitHub Actions, Telegram Bot API
+`Python`, `requests`, `BeautifulSoup4`, `SQLite`, `PyYAML`, `python-dotenv`, `GitHub Actions`, `Telegram Bot API`
